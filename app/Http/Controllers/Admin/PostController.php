@@ -11,8 +11,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 use App\Post;
-use App\Category;
-use App\Tag;
 
 class PostController extends Controller
 {
@@ -47,10 +45,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $tags       = Tag::orderBy('name', 'ASC')->get();
 
-        return view('admin.posts.create', compact('categories', 'tags'));
+        return view('admin.posts.create');
     }
 
     /**
@@ -71,7 +67,7 @@ class PostController extends Controller
         }
 
         //TAGS
-        $post->tags()->attach($request->get('tags'));
+        //$post->tags()->attach($request->get('tags'));
 
         return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada creada con éxito');
     }
@@ -98,12 +94,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $tags       = Tag::orderBy('name', 'ASC')->get();
         $post       = Post::find($id);
         $this->authorize('pass', $post);
 
-        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -126,9 +120,6 @@ class PostController extends Controller
             $post->fill(['file' => asset($path)])->save();
         }
 
-        //TAGS
-        $post->tags()->sync($request->get('tags'));
-
         return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada actualizada con éxito');
     }
 
@@ -141,7 +132,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id)->delete();
-        $this->authorize('pass', $post);
+        //$this->authorize('pass', $post);
 
         return back()->with('info', 'Eliminado correctamente');
     }

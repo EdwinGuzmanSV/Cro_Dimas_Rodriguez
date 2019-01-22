@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Lista de Entradas 
+                    Lista de Anecdotas 
                     <a href="{{ route('posts.create') }}" class="pull-right btn btn-sm btn-primary">
                         Crear
                     </a>
@@ -18,7 +18,7 @@
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
-                                <th>Nombre</th>
+                                <th>Titulo</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
