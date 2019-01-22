@@ -20,7 +20,7 @@ class PageController extends Controller
  public function faq(){
         
 
-        return view('ohlaaa');
+        
     }
 
 
