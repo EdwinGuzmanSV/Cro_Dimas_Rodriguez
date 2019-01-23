@@ -33,3 +33,5 @@ Route::resource('faqs', 		'Admin\FaqController');
 
 Route::resource('anecdotas', 		'Admin\AnecdotaController');
 
+Route::resource('solicituds','SolicitudController');
+
