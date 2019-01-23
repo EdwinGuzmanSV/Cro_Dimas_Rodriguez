@@ -27,6 +27,7 @@ class AnecdotaUpdateRequest extends FormRequest
             'name'          => 'required',
             'slug'          => 'required|unique:anecdotas,slug,' . $this->anecdota,
             'user_id'       => 'required|integer',
+            'tags'          => 'required|array',
             'body'          => 'required',
             'status'        => 'required|in:DRAFT,PUBLISHED',
         ];

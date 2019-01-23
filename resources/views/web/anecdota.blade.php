@@ -7,19 +7,22 @@
 
         	<h1>{{ $anecdota->name }}</h1>
 
-
                 <div class="panel-body">
                     @if($anecdota->file)
-                        <center><img src="{{ $anecdota->file }}" class="img-responsive"></center>
+                        <img src="{{ $anecdota->file }}" class="img-responsive">
                     @endif
                     
                     {{ $anecdota->excerpt }}
                     <hr>
                     {!! $anecdota->body !!}
-                    
-                </div>
-            </div>
+                    <hr>
 
+                    Etiquetas
+                    @foreach($anecdota->tags as $tag)
+                    <a href="{{ route('tag', $tag->slug) }}">
+                        {{ $tag->name }}
+                    </a>
+                    @endforeach
         </div>
     </div>
 </div>
