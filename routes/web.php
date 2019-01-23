@@ -22,7 +22,14 @@ Route::get('/listaAnecdotas', 'Web\PageController@listaAnecdotas')->name('listaA
 Route::get('/anecdota/{slug}', 'Web\PageController@anecdota')->name('anecdota');
 Route::get('/category/{slug}', 'Web\PageController@category')->name('category');
 Route::get('/tag/{slug}', 'Web\PageController@tag')->name('tag');
+Route::get('/faq/{slug}', 'Web\PageController@faq')->name('faq');
+
 
 Route::resource('tags', 		'Admin\TagController');
 Route::resource('categories', 	'Admin\CategoryController');
+
+Route::resource('posts', 		'Admin\PostController');
+Route::resource('faqs', 		'Admin\FaqController');
+
 Route::resource('anecdotas', 		'Admin\AnecdotaController');
+

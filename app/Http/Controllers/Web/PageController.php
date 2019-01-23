@@ -17,6 +17,13 @@ class PageController extends Controller
     	return view('web.anecdotas', compact('anecdotas'));
     }
 
+ public function faq(){
+        
+
+        
+    }
+
+
     public function category($slug){
         $category = Category::where('slug', $slug)->pluck('id')->first();
 
@@ -40,5 +47,7 @@ class PageController extends Controller
 
     	return view('web.anecdota', compact('anecdota'));
     }
+
+    
 
 }
