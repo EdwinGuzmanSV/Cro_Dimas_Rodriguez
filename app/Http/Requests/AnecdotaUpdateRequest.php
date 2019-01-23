@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostStoreRequest extends FormRequest
+class AnecdotaUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,12 +25,10 @@ class PostStoreRequest extends FormRequest
     {
         $rules = [
             'name'          => 'required',
-            'slug'          => 'required|unique:posts,slug',
+            'slug'          => 'required|unique:anecdotas,slug,' . $this->anecdota,
             'user_id'       => 'required|integer',
-            //'category_id'   => 'required|integer',
-            //'tags'          => 'required|array',
             'body'          => 'required',
-            'status'        => 'required|in:DRAFT,PUBLISHED',            
+            'status'        => 'required|in:DRAFT,PUBLISHED',
         ];
 
         if($this->get('image'))        

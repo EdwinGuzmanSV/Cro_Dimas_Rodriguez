@@ -5,17 +5,17 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-        	<h1>{{ $post->name }}</h1>
+        	<h1>{{ $anecdota->name }}</h1>
 
 
                 <div class="panel-body">
-                    @if($post->file)
-                        <img src="{{ $post->file }}" class="img-responsive">
+                    @if($anecdota->file)
+                        <img src="{{ $anecdota->file }}" class="img-responsive">
                     @endif
                     
-                    {{ $post->excerpt }}
+                    {{ $anecdota->excerpt }}
                     <hr>
-                    {!! $post->body !!}
+                    {!! $anecdota->body !!}
                     
                 </div>
             </div>

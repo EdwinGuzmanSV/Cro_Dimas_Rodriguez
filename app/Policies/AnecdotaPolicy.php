@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\User;
-use App\Post;
+use App\Anecdota;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class PostPolicy
+class AnecdotaPolicy
 {
     use HandlesAuthorization;
 
@@ -20,8 +20,8 @@ class PostPolicy
         //
     }
 
-    public function pass(User $user, Post $post)
+    public function pass(User $user, Anecdota $anecdota)
     {
-        return $user->id == $post->user_id;
+        return $user->id == $anecdota->user_id;
     }
 }
