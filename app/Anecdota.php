@@ -6,6 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anecdota extends Model
 {
-    //protected $table = 'anecdotas';
-    protected $fillable = ['titulo','descripcion','condicion','imagen'];
+    protected $fillable = [
+        'user_id'/*, 'category_id'*/, 'name', 'slug', 'excerpt', 'body', 'status', 'file'
+    ];
+
+    /*public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }*/
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /*public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }*/
 }

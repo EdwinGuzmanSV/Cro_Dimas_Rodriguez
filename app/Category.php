@@ -10,8 +10,8 @@ class Category extends Model
         'name', 'slug', 'body'
     ];
 
-    public function posts()
+    public function anecdotas()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Anecdota::class);
     }
 }

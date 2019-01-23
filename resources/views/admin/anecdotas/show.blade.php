@@ -6,15 +6,13 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Crear Anecdota
+                    Ver Anecdota
                 </div>
 
                 <div class="panel-body">
-                    {!! Form::open(['route' => 'posts.store', 'files' => true]) !!}
-                        
-                        @include('admin.posts.partials.form')
-
-                    {!! Form::close() !!}
+                    <p><strong>Titulo</strong> {{ $anecdota->name }}</p>
+                    <p><strong>Slug</strong> {{ $anecdota->slug }}</p>
+                    <p><strong>Descripción</strong> {{ $anecdota->body }}</p>
                 </div>
             </div>
         </div>

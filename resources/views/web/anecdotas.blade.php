@@ -7,22 +7,22 @@
 
         	<h1>Lista de Anecdotas</h1>
 
-        	@foreach($posts as $post)
+        	@foreach($anecdotas as $anecdota)
             <div class="panel panel-default">
-                <div class="panel-heading">{{ $post->name }}</div>
+                <div class="panel-heading">{{ $anecdota->name }}</div>
 
                 <div class="panel-body">
-                    @if($post->file)
-                        <img src="{{ $post->file }}" class="img-responsive">
+                    @if($anecdota->file)
+                        <img src="{{ $anecdota->file }}" class="img-responsive">
                     @endif
                     
-                    {{ $post->excerpt }}
-                    <a href="{{ route('post', $post->slug) }}" class="pull-right">Leer más</a>
+                    {{ $anecdota->excerpt }}
+                    <a href="{{ route('anecdota', $anecdota->slug) }}" class="pull-right">Leer más</a>
                 </div>
             </div>
             @endforeach
 
-            {{ $posts->render() }}
+            {{ $anecdotas->render() }}
         </div>
     </div>
 </div>
