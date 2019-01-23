@@ -2,6 +2,27 @@
 
 @section('content')
 <div class="container">
+        <div>
+                <div class="col justify-md-center">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+        <div class="carousel-inner">
+                <div class="item active">
+                  <center><img src="images/img6-2-940x788.jpg" alt="Los Angeles" style="width:100%;"></center>
+                </div>
+          
+                <div class="item">
+                    <center><img src="images/img1-940x788.jpg" alt="Chicago" style="width:100%;"></center>
+                </div>
+              
+                <div class="item">
+                    <center><img src="images/img2-1-940x788.jpg" alt="New york" style="width:100%;"></center>
+                </div>
+              </div>
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
@@ -12,6 +33,7 @@
                                         <div class="media-container-row">
                                             <div class="media-content">
                                                 <div class="mbr-section-text">
+                                                    
                                                     <center><p class="mbr-text align-right mb-0 mbr-fonts-style display-4"><strong><font color="#000000">NUESTROS SOCIOS:</font><br><font color="#000000">COMPAÑEROS LISIADOS O DISCAPACITADOS DE GUERRA POR EL CONFLICTO ARMADO, TANTO DEL FMLN HISTÓRICO COMO DE LA FUERZA ARMADA, Y SUS FAMILIARES PERSONAS DE LA MICRO Y PEQUEÑA EMPRESA, TAMBIÉN PERSONAS NATURALES Y JURÍDICAS.</font><br></strong><font color="#000000"><strong>ESTAMOS MUY COMPROMETIDOS CON EL DESARROLLO ECONÓMICO DE LA MUJER SALVADOREÑA, POR LO QUE CONSTANTEMENTE DISEÑAMOS E IMPLEMENTAMOS PRODUCTOS ESFECÍFICOS PARA ESTE IMPORTANTE GRUPO DE LA SOCIEDAD.</strong><br></font><font color="#000000"><strong><br></strong></font></p></center>
                                                 </div>
                                             </div>
