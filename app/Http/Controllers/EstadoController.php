@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Solicitud;
-class SolicitudController extends Controller
+
+class EstadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +14,8 @@ class SolicitudController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
-        $solicituds=Solicitud::all();
-        return view('admin.solicitudes.index',compact('solicituds'));
-
+    {
+        //
     }
 
     /**
@@ -26,7 +25,7 @@ class SolicitudController extends Controller
      */
     public function create()
     {
-        return view('web.solicitudes.create');
+        //
     }
 
     /**
@@ -37,9 +36,7 @@ class SolicitudController extends Controller
      */
     public function store(Request $request)
     {
-        $solicitud = Solicitud::create($request->all());
-
-        return redirect()->route('register')->with('info', 'Solicitud enviada con éxito');
+        //
     }
 
     /**
@@ -50,8 +47,9 @@ class SolicitudController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -60,9 +58,7 @@ class SolicitudController extends Controller
      */
     public function edit($id)
     {
-
-        $solicitud = Solicitud::find($id);
-        return view('admin.solicitudes.detalle',compact('solicitud','id'));
+        //
     }
 
     /**
@@ -75,13 +71,11 @@ class SolicitudController extends Controller
     public function update(Request $request, $id)
     {
         $solicitud = Solicitud::find($id);
-        $activo=1;
-        $solicitud->estado=$activo;
+        $ignorado='I';
+        $solicitud->estado=$ignorado;
         $solicitud->save();
         return redirect('solicituds');
-
     }
-
 
     /**
      * Remove the specified resource from storage.
@@ -89,8 +83,8 @@ class SolicitudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function destroy($id)
+    public function destroy($id)
     {
-        
+        //
     }
 }
