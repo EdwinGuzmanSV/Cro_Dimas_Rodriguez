@@ -53,7 +53,7 @@
                             <li><a href="{{ route('tags.index') }}">Etiquetas</a></li>
                             <li><a href="{{ route('categories.index') }}">Categorías</a></li>
                             <li><a href="{{ route('faqs.index') }}">FAQs</a></li>
-                            <li><a href="{{ route('posts.index') }}">Anectotas</a></li>
+                            <li><a href="{{ route('anecdotas.index') }}">Anectotas</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
