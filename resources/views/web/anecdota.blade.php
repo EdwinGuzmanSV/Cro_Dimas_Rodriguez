@@ -10,7 +10,7 @@
 
                 <div class="panel-body">
                     @if($anecdota->file)
-                        <img src="{{ $anecdota->file }}" class="img-responsive">
+                        <center><img src="{{ $anecdota->file }}" class="img-responsive"></center>
                     @endif
                     
                     {{ $anecdota->excerpt }}
