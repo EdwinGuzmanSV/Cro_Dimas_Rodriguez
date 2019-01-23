@@ -26,10 +26,9 @@ class AnecdotaStoreRequest extends FormRequest
         $rules = [
             'name'          => 'required',
             'slug'          => 'required|unique:anecdotas,slug',
-            
             'user_id'       => 'required|integer',
             //'category_id'   => 'required|integer',
-            //'tags'          => 'required|array',
+            'tags'          => 'required|array',
             'body'          => 'required',
             'status'        => 'required|in:DRAFT,PUBLISHED',            
         ];

@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('Cro.DimasRodríguezdeR.L', 'Cro.DimasRodríguezdeR.L') }}
                     </a>
                 </div>
 
@@ -51,7 +51,7 @@
                         @else
                             <li><a href="{{ route('tags.index') }}">Etiquetas</a></li>
                             <li><a href="{{ route('categories.index') }}">Categorías</a></li>
-                            <li><a href="{{ route('anecdotas.index') }}">Anectotas</a></li>
+                            <li><a href="{{ route('anecdotas.index') }}">Anecdotas</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
