@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('listaAnecdotas');
+    return view('home');
 });
 
 Auth::routes();
@@ -35,4 +35,5 @@ Route::resource('anecdotas', 		'Admin\AnecdotaController');
 
 Route::resource('solicituds','SolicitudController');
 Route::resource('solicitudes','EstadoController');
+Route::resource('inicio','homeController@index');
 
