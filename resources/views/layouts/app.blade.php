@@ -43,8 +43,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">Iniciar Sesion</a></li>
+                            <li><a href="{{ route('register') }}">Registo</a></li>
                         @else
                             <li><a href="{{ route('tags.index') }}">Etiquetas</a></li>
                             <li><a href="{{ route('categories.index') }}">Categorías</a></li>
@@ -59,7 +59,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Cerrar Sesion
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
