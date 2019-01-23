@@ -53,7 +53,7 @@
                             <li><a href="{{ route('solicitudes.index') }}">Acerca de</a></li>
                         @else
                             <li><a href="{{ route('tags.index') }}">Etiquetas</a></li>
-                            <li><a href="{{ route('categories.index') }}">Categorías</a></li>                         
+                            <li><a href="{{ route('anecdotas.index') }}">Anecdotas</a></li>                     
                             <li><a href="{{ route('solicituds.index') }}">Ver Solicitudes</a></li>
 
 
