@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 use App\Anecdota;
+use App\Tag;
 
 class AnecdotaController extends Controller
 {
@@ -45,8 +46,8 @@ class AnecdotaController extends Controller
      */
     public function create()
     {
-
-        return view('admin.anecdotas.create');
+        $tags  = Tag::orderBy('name', 'ASC')->get();
+        return view('admin.anecdotas.create', compact('tags'));
     }
 
     /**
@@ -67,7 +68,7 @@ class AnecdotaController extends Controller
         }
 
         //TAGS
-        //$anecdota->tags()->attach($request->get('tags'));
+        $anecdota->tags()->attach($request->get('tags'));
 
         return redirect()->route('anecdotas.edit', $anecdota->id)->with('info', 'Entrada creada con éxito');
     }
@@ -94,10 +95,11 @@ class AnecdotaController extends Controller
      */
     public function edit($id)
     {
+        $tags       = Tag::orderBy('name', 'ASC')->get();
         $anecdota       = Anecdota::find($id);
         $this->authorize('pass', $anecdota);
 
-        return view('admin.anecdotas.edit', compact('anecdota'));
+        return view('admin.anecdotas.edit', compact('anecdota','tags'));
     }
 
     /**
@@ -119,6 +121,7 @@ class AnecdotaController extends Controller
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $anecdota->fill(['file' => asset($path)])->save();
         }
+        $anecdota->tags()->sync($request->get('tags'));
 
         return redirect()->route('anecdotas.edit', $anecdota->id)->with('info', 'Entrada actualizada con éxito');
     }
