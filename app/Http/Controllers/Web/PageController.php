@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Category;
+//use App\Category;
 use App\Tag;
 use App\Anecdota;
 
@@ -24,14 +24,14 @@ class PageController extends Controller
     }
 
 
-    public function category($slug){
+    /*public function category($slug){
         $category = Category::where('slug', $slug)->pluck('id')->first();
 
         $anecdotas = Anecdota::where('category_id', $category)
             ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
 
         return view('web.anecdotas', compact('anecdotas'));
-    }
+    }*/
 
     public function tag($slug){ 
         $anecdotas = Anecdota::whereHas('tags', function($query) use ($slug) {
