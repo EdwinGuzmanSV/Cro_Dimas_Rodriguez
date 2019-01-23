@@ -38,6 +38,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('listaAnecdotas') }}">Lista Anecdotas</a></li>
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -51,6 +52,7 @@
                         @else
                             <li><a href="{{ route('tags.index') }}">Etiquetas</a></li>
                             <li><a href="{{ route('categories.index') }}">Categorías</a></li>
+                            <li><a href="{{ route('faqs.index') }}">FAQs</a></li>
                             <li><a href="{{ route('posts.index') }}">Anectotas</a></li>
 
                             <li class="dropdown">
