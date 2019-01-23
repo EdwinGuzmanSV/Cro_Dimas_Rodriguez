@@ -4,7 +4,7 @@
   <h2>Cooperativa Compañero Dimas Rodrigues de R.L <br><small><i><b>"Entre mas unidos, mas fuertes somos"</b></i></small></h2>
   <img src="img/logo.jpg" class="img-fluid" alt="Responsive image">
 </div>
-<div class="container" style="padding-left: 225px;">
+<div class="container" style="padding-left: 180px;">
     <div class="col justify-md-center">
        <div class="col col-lg-10" >
        <div id="myCarousel" class="carousel slide" data-ride="carousel">
