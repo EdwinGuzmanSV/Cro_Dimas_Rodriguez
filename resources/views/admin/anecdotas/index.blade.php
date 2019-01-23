@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Lista de Anecdotas 
-                    <a href="{{ route('posts.create') }}" class="pull-right btn btn-sm btn-primary">
+                    <a href="{{ route('anecdotas.create') }}" class="pull-right btn btn-sm btn-primary">
                         Crear
                     </a>
                 </div>
@@ -23,18 +23,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $post)
+                            @foreach($anecdotas as $anecdota)
                             <tr>
-                                <td>{{ $post->id }}</td>
-                                <td>{{ $post->name }}</td>
+                                <td>{{ $anecdota->id }}</td>
+                                <td>{{ $anecdota->name }}</td>
                                 <td width="10px">
-                                    <a href="{{ route('posts.show', $post->id) }}" class="btn btn-sm btn-default">Ver</a>
+                                    <a href="{{ route('anecdotas.show', $anecdota->id) }}" class="btn btn-sm btn-default">Ver</a>
                                 </td>
                                 <td width="10px">
-                                    <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-default">Editar</a>
+                                    <a href="{{ route('anecdotas.edit', $anecdota->id) }}" class="btn btn-sm btn-default">Editar</a>
                                 </td>
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) !!}
+                                    {!! Form::open(['route' => ['anecdotas.destroy', $anecdota->id], 'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
                                         </button>                           
@@ -45,7 +45,7 @@
                         </tbody>   
                     </table>     	
 
-                    {{ $posts->render() }}
+                    {{ $anecdotas->render() }}
                 </div>
             </div>
         </div>

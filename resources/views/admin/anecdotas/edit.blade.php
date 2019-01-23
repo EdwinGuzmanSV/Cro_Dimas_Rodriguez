@@ -6,13 +6,15 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Ver Anecdota
+                    Editar Anecdota
                 </div>
 
                 <div class="panel-body">
-                    <p><strong>Titulo</strong> {{ $post->name }}</p>
-                    <p><strong>Slug</strong> {{ $post->slug }}</p>
-                    <p><strong>Descripción</strong> {{ $post->body }}</p>
+                    {!! Form::model($anecdota, ['route' => ['anecdotas.update', $anecdota->id], 'method' => 'PUT', 'files' => true]) !!}
+                        
+                        @include('admin.anecdotas.partials.form')
+
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

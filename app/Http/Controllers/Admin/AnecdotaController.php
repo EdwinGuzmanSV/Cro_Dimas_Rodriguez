@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\PostStoreRequest;
-use App\Http\Requests\PostUpdateRequest;
+use App\Http\Requests\AnecdotaStoreRequest;
+use App\Http\Requests\AnecdotaUpdateRequest;
 
 use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Storage;
 
-use App\Post;
+use App\Anecdota;
 
-class PostController extends Controller
+class AnecdotaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -31,11 +31,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id', 'DESC')
+        $anecdotas = Anecdota::orderBy('id', 'DESC')
             ->where('user_id', auth()->user()->id)
             ->paginate();
 
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.anecdotas.index', compact('anecdotas'));
     }
 
     /**
@@ -46,7 +46,7 @@ class PostController extends Controller
     public function create()
     {
 
-        return view('admin.posts.create');
+        return view('admin.anecdotas.create');
     }
 
     /**
@@ -55,21 +55,21 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostStoreRequest $request)
+    public function store(AnecdotaStoreRequest $request)
     {
-        $post = Post::create($request->all());
-        $this->authorize('pass', $post);
+        $anecdota = Anecdota::create($request->all());
+        $this->authorize('pass', $anecdota);
 
         //IMAGE 
         if($request->file('image')){
             $path = Storage::disk('public')->put('image',  $request->file('image'));
-            $post->fill(['file' => asset($path)])->save();
+            $anecdota->fill(['file' => asset($path)])->save();
         }
 
         //TAGS
-        //$post->tags()->attach($request->get('tags'));
+        //$anecdota->tags()->attach($request->get('tags'));
 
-        return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada creada con éxito');
+        return redirect()->route('anecdotas.edit', $anecdota->id)->with('info', 'Entrada creada con éxito');
     }
 
     /**
@@ -80,10 +80,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        $this->authorize('pass', $post);
+        $anecdota = Anecdota::find($id);
+        $this->authorize('pass', $anecdota);
 
-        return view('admin.posts.show', compact('post'));
+        return view('admin.anecdotas.show', compact('anecdota'));
     }
 
     /**
@@ -94,10 +94,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post       = Post::find($id);
-        $this->authorize('pass', $post);
+        $anecdota       = Anecdota::find($id);
+        $this->authorize('pass', $anecdota);
 
-        return view('admin.posts.edit', compact('post'));
+        return view('admin.anecdotas.edit', compact('anecdota'));
     }
 
     /**
@@ -107,20 +107,20 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PostUpdateRequest $request, $id)
+    public function update(AnecdotaUpdateRequest $request, $id)
     {
-        $post = Post::find($id);
-        $this->authorize('pass', $post);
+        $anecdota = Anecdota::find($id);
+        $this->authorize('pass', $anecdota);
 
-        $post->fill($request->all())->save();
+        $anecdota->fill($request->all())->save();
 
         //IMAGE 
         if($request->file('image')){
             $path = Storage::disk('public')->put('image',  $request->file('image'));
-            $post->fill(['file' => asset($path)])->save();
+            $anecdota->fill(['file' => asset($path)])->save();
         }
 
-        return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada actualizada con éxito');
+        return redirect()->route('anecdotas.edit', $anecdota->id)->with('info', 'Entrada actualizada con éxito');
     }
 
     /**
@@ -131,8 +131,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id)->delete();
-        //$this->authorize('pass', $post);
+        $anecdota = Anecdota::find($id)->delete();
+        //$this->authorize('pass', $anecdota);
 
         return back()->with('info', 'Eliminado correctamente');
     }

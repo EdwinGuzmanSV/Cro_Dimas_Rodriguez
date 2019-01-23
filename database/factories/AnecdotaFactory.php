@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Post::class, function (Faker $faker) {
+$factory->define(App\Anecdota::class, function (Faker $faker) {
     
     $title = $faker->sentence(4);
 
