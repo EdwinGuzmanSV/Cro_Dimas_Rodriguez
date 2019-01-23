@@ -15,7 +15,7 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        //
+        return view('web.acerca_de.index');
     }
 
     /**

@@ -48,7 +48,9 @@
 
                             <li><a href="{{ route('login') }}">Iniciar Sesion</a></li>
                             <li><a href="{{ route('register') }}">Registro</a></li>
-                            <li><a href="{{ route('faqs.index') }}">FAQs</a></li><li><a href="{{ route('solicituds.create') }}">Solicitud Socio</a></li>
+                            <li><a href="{{ route('faqs.index') }}">FAQs</a></li><li><a href="{{ route('solicituds.create') }}">Solicitud Socio</a>
+                            </li>
+                            <li><a href="{{ route('solicitudes.index') }}">Acerca de</a></li>
                         @else
                             <li><a href="{{ route('tags.index') }}">Etiquetas</a></li>
                             <li><a href="{{ route('categories.index') }}">Categorías</a></li>
